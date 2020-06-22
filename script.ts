@@ -1,6 +1,27 @@
-var str1:String = "5 + 5";
-console.log(str1);
+interface thePerson
+{
+    FirstName:string,
+    LastName:string,
+    EyeColor:string,
+    Age:number|string
+    greeting: () => string
+}
 
-var num1:number = 5 + 5;
+var person:thePerson = {
+    FirstName: "Aaron",
+    LastName: "Slama",
+    EyeColor: "Blue",
+    Age: 28,
+    greeting: () => {return "Hello Aaron"}
+}
 
-console.log(num1); 
+var person2:thePerson = {
+    FirstName: "Johanson",
+    LastName: "Mike",
+    EyeColor: "Red",
+    Age: "66",
+    greeting: () => {return "Hello Mike"}
+}
+
+console.log(person);
+console.log(person2);
