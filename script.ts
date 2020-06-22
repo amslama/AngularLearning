@@ -1,6 +1,34 @@
-var str1:String = "5 + 5";
-console.log(str1);
+var var1:string | number = "5 + 5";
+console.log(var1);
 
-var num1:number = 5 + 5;
+var1 = "another string";
+console.log("var1 as a string " + var1);
+var1 = 67;
+console.log("var1 as a number " + var1); 
 
-console.log(num1); 
+var array1: string[] | number[];
+
+array1 = ["hello world"]
+console.log(array1);
+
+array1 = [1, 4, 9];
+console.log(array1);
+
+function func1(para1:string|number|string[]){
+    if(typeof para1 == "string")
+    {
+        console.log("para1 is a string");
+    }
+    else if(typeof para1 == "number")
+    {
+        console.log("para1 is a number");
+    }
+    else
+    {
+        console.log(para1);
+    }
+}
+
+func1("word");
+func1(67);
+func1(["Let's", "Go", "Blues"]);
