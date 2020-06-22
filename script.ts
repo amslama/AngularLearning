@@ -1,9 +1,10 @@
 class human{
     //field == property == variable
-    
+    static firstName:string = "Samantha";
     constructor(private firstName:string, protected lastName:string, public eyeColor?:string,
                     public hairColor?:string, public age?:number)
     {    }
+    
 
     doAction(){}
 
@@ -29,10 +30,21 @@ class human{
     }
 }
 
-var test = new human("Maria", "Boris", "Green");
+class child extends human{
+    childSleepiness:string;
+    constructor(childSleepiness:string, fName, lName)
+    {
+        super(fName, lName);
+        this.childSleepiness = childSleepiness;
 
-test.getAllData();
+    }
 
-var test2 = new human("Mark", "Johnson", "blue", "brown", 38);
+}
 
-test2.getAllData();
+
+var test = new human("Mark", "Johnson", "blue", "brown", 38);
+
+var test2 = new child("none", "Aaron", "Slama");
+
+console.log(test);
+console.log(test2);
