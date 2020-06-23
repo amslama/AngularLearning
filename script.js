@@ -1,7 +1,11 @@
-var class2 = /** @class */ (function () {
-    function class2() {
+var Person = /** @class */ (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
     }
-    return class2;
+    return Person;
 }());
-var obj1 = { age: 32, name: "Barry" };
+var obj1 = new Person("Mark", 34);
+console.log(obj1);
+obj1.name = "Elsa";
 console.log(obj1);

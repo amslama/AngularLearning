@@ -1,16 +1,17 @@
-interface CLinterface{
-    name: string;
-}
-
-class class2 implements CLinterface {
-    name: string;
-}
-
-interface Interface1 extends class2{
+interface iPerson{
+    name:string;
     age:number;
-
 }
 
-var obj1: Interface1 = {age: 32, name: "Barry"}
+var obj1: iPerson = {
+    name: "Watson",
+    age: 17
+}
 
-console.log(obj1);
+obj1.name = "David";
+obj1.age = 37;
+
+var obj2: Readonly<iPerson> = {
+    name: "Elsa",
+    age: 17
+}
