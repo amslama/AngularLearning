@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div appColorchanger [bgColor]="'orange'" [txtColor] = "'blue'">
+   The directive div
+</div>
+<div appColorchanger [txtColor]="'pink'"
+>
+   Another directive, only text color
+</div>
+The data we recieved for the component : {{title}}
+
+<!--interpolation binding-->
+<img src = "{{imgSrc150}}" alt = "img not displayed">
+
+<!--Property Binding => maniuplating the dom-->
+<img [src] = "imgSrc150" alt = "second image not displayed">
+
+<!--Data binding => changing the attribute-->
+<img [attr.src] = "imgSrc150" alt = "third image not displayed">
+
+<table [border] = "1">
+   <tr>
+      <td [colSpan] = "cs">TD1</td>
+      <td >TD2</td>
+      <td >TD3</td>
+   </tr>
+   <tr>
+      <td >TD1</td>
+      <td >TD2</td>
+      <td [attr.colspan] = "cs">TD3</td>   </tr>
+
+</table>
+
+{{ 2 == 2 ? title : "Restrict"}} <br>
+
+{{ 2 == 1 ? title : "Restrict"}} <br>
+
+{{ 2 == 1 ? "Restrict" : title}} <br>
+
+<img [src] = "imgSize == 150  ? imgSrc150 :imgSrc250" alt = "no files found">
+
+
+<div [className] = "class1" > Some div tag</div>
+
+<div [className] = "newClass() ? class1 : class2"> Some other div</div>
+<div [className] = "!newClass() ? class1 : class2"> Some other div</div>
+<div [class.myClass]=false> some other new div tag</div>
+<div [class.myClass]=true> another new div tag</div>
+<div [class.myClass]="boolFunc()" [class.myClass2]="boolTrue"> Do birds really fly?</div>
+<div
+ [style.color]="style1 == true ? 'lightgreen' : 'magenta'"
+ [style.background-color]="newStyle()"
+ [style.border]="'3px solid black'"
+ >
+ Grapes aren't real
+</div>
+
+<button (click) ="onClick($event)">Click me!</button>
+<button (mouseup) = "onEvent($event)">On double click</button><br>
+{{twoWayData}}<br>
+<input type="text"[(ngModel)]="inputVal"/><br>
+
+<div *ngFor="let data of collectedData">
+{{data}}<br>
+</div>
+
+<ul *ngFor="let data of collectedData">
+   {{data}}<br>
+</ul>
