@@ -1,48 +1,37 @@
 class person {
-    constructor(public name:string)
+    name:string;
+    abstract eyeColor:string;
+    constructor(name:string)
     {
-
+        this.name = name;
     }
 
-    eating(food = "none")
+    func1()
     {
-        console.log(this.name + " eats " + food);
+        console.log("The name is " + this.name);
     }
 
+    abstract func2();
 }
 
-class Obj1class extends person
-{
-    constructor(name:string){
+var obj1 = new person("Martha");
+
+obj1.func1();
+
+class Person1 extends person{
+    age:number;
+    eyeColor:string;
+    constructor(name:string, age:number)
+    {
         super(name);
+        this.age = age;
     }
-
-    eating(food = "pasta")
+    func2()
     {
-        console.log("obj1class");
-        super.eating(food);
-    }
-}
-class Obj2class extends person
-{
-    constructor(name:string){
-        super(name);
-    }
-
-    eating(food = "Macaroni")
-    {
-        console.log("obj2class");
-        super.eating(food);
+        this.name + " and " + this.age;
     }
 }
 
-var obj1 = new person("John");
+var obj2 = new Person1("billy bob", 39);
 
-obj1.eating();
-
-var obj1class = new Obj1class("Mar");
-
-obj1class.eating();
-
-var obj2class = new Obj2class("Martha");
-obj2class.eating();
+obj2.
