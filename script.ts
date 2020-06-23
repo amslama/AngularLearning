@@ -1,16 +1,3 @@
-interface CLinterface{
-    name: string;
-}
+import {var1} from "./navbar"
 
-class class2 implements CLinterface {
-    name: string;
-}
-
-interface Interface1 extends class2{
-    age:number;
-
-}
-
-var obj1: Interface1 = {age: 32, name: "Barry"}
-
-console.log(obj1);
+console.log(var1);
