@@ -1,4 +1,7 @@
-var str1 = "5 + 5";
-console.log(str1);
-var num1 = 5 + 5;
-console.log(num1);
+var class2 = /** @class */ (function () {
+    function class2() {
+    }
+    return class2;
+}());
+var obj1 = { age: 32, name: "Barry" };
+console.log(obj1);

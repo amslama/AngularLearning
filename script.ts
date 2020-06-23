@@ -1,6 +1,16 @@
-var str1:String = "5 + 5";
-console.log(str1);
+interface CLinterface{
+    name: string;
+}
 
-var num1:number = 5 + 5;
+class class2 implements CLinterface {
+    name: string;
+}
 
-console.log(num1); 
+interface Interface1 extends class2{
+    age:number;
+
+}
+
+var obj1: Interface1 = {age: 32, name: "Barry"}
+
+console.log(obj1);
