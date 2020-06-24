@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [getInput]= "input"></app-header>
 <div appColorchanger [bgColor]="'orange'" [txtColor] = "'blue'">
    The directive div
 </div>
@@ -13,7 +13,7 @@ The data we received for the component : {{title}}
 <!--interpolation binding-->
 <img src = "{{imgSrc150}}" alt = "img not displayed">
 
-<!--Property Binding => maniuplating the dom-->
+<!--Property Binding => manipulating the dom-->
 <img [src] = "imgSrc150" alt = "second image not displayed">
 
 <!--Data binding => changing the attribute-->
@@ -34,9 +34,6 @@ The data we received for the component : {{title}}
 
 {{ 2 == 2 ? title : "Restrict"}} <br>
 
-{{ 2 == 1 ? title : "Restrict"}} <br>
-
-{{ 2 == 1 ? "Restrict" : title}} <br>
 
 <img [src] = "imgSize == 150  ? imgSrc150 :imgSrc250" alt = "no files found">
 
@@ -49,7 +46,7 @@ The data we received for the component : {{title}}
 <div [class.myClass]=true> another new div tag</div>
 <div [class.myClass]="boolFunc()" [class.myClass2]="boolTrue"> Do birds really fly?</div>
 <div
- [style.color]="style1 == true ? 'lightgreen' : 'magenta'"
+ [style.color]="style2 == true ? 'lightgreen' : 'magenta'"
  [style.background-color]="newStyle()"
  [style.border]="'3px solid black'"
  >
@@ -61,6 +58,8 @@ The data we received for the component : {{title}}
 {{twoWayData}}<br>
 <input type="text"[(ngModel)]="inputVal"/><br>
 
+
+<!--use *ng when you will be using the ng-template tag-->
 <div *ngFor="let data of collectedData">
 {{data}}<br>
 </div>
@@ -69,11 +68,52 @@ The data we received for the component : {{title}}
    {{data}}<br>
 </ul>
 
-<div *ngIf= "ngIfStatus && ngIfStatus2 == true">
-   So, the ngIfStatus variaable is true.
+<ng-template [ngIf] = "ngIfStatus">
+   <div>so ngIf is true</div>
+</ng-template>
+
+<div *ngIf= "ngIfStatus && ngIfStatus2 == false; then thenBlock; else elseBlock">
+   So, the ngIfStatus variable is true.
 </div>
-<!--Potentially using the wrong version of angular
+<ng-template #thenBlock>
+   So you went with the then block
+</ng-template>
+
 <ng-template #elseBlock>
    This the else block
 </ng-template>
--->
+
+<ul>
+   <li *ngFor = " let each of ngForArray">
+      {{each}}
+   </li>
+</ul>
+
+<ul *ngFor = "let each of ngForArray2 let i = index">
+   <li>
+      {{i}}) {{each.id}} - {{each.name}} - {{each.subject}}
+   </li>
+</ul>
+
+<div [ngSwitch] ="ngSwitchSource">
+   <div *ngSwitchCase = "'javascript'">
+      so the source is javascript
+   </div>
+   <div *ngSwitchCase = "'Angular'">
+      so the source is Angular
+   </div>
+   <div *ngSwitchCase = "'typescript'">
+      so the source is typescript
+   </div>
+   <div *ngSwitchDefault>
+      so the source is the default
+   </div>
+</div>
+
+<div *appMyIf="ngMyIfCondition">
+   This will show if ngMyIfCondition is true
+</div>
+
+<div *appMyIf="!ngMyIfCondition">
+   This will show if ngMyIfCondition is false
+</div>

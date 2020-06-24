@@ -9,6 +9,17 @@ export class AppComponent {
   inputVal: string = "";
   collectedData = [];
 
+  ngForArray = [
+    "Tea", "cup", "sugar", "coffee", "milk"
+  ]
+  ngForArray2 = [
+    {"id" : 1, "name" : "John", "subject" : "English"},
+    {"id" : 2, "name" : "Jack", "subject" : "Maths"}
+  ]
+
+  input:string = "Created in app.component.ts"
+  ngMyIfCondition = true;
+  ngSwitchSource = "Angular";
   ngIfStatus: boolean = true;
   ngIfStatus2: boolean = false;
   title: string  = "Learn Angular";
@@ -44,7 +55,7 @@ export class AppComponent {
 
   onEvent(event)
   {
-    console.log("Evented me!");
+    console.log("Event me!");
     console.log(event);
   }
 }
