@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-@Input() getInput:string;
-
+  @Output() changer = new EventEmitter();
+  @Input() getInput:string;
+c = 0;
   constructor() { }
 
   ngOnInit() {
     console.log(this.getInput + ", but printed in header.component.ts");
   }
 
+  changerFunc()
+  {
+    this.c += 1;
+    this.changer.emit(this.c);
+  }
 }

@@ -1,4 +1,8 @@
-<app-header [getInput]= "input"></app-header>
+<app-header [getInput]= "input" (changer)="showResults($event)" ></app-header>
+
+<input type="text" [(ngModel)]="someData">
+{{someData}}
+
 <div appColorchanger [bgColor]="'orange'" [txtColor] = "'blue'">
    The directive div
 </div>

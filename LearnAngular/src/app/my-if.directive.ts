@@ -17,7 +17,3 @@ export class MyIfDirective {
   constructor(private viewTemplate:TemplateRef<any>, private viewContainer: ViewContainerRef) { }
 
 }
-
-ngModel = "inputReceived";
-
-{{inputReceived}}

@@ -6,6 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(){
+  }
+  inputData : string;
+
+  set someData(value: string)
+  {
+    this.inputData = value;
+    console.log(this.inputData);
+    if(this.inputData =="John")
+    {
+      alert(this.inputData);
+    }
+  }
+
+  get someData():string
+  {
+    return this.inputData;
+  }
+
   inputVal: string = "";
   collectedData = [];
 
@@ -57,5 +76,10 @@ export class AppComponent {
   {
     console.log("Event me!");
     console.log(event);
+  }
+
+  showResults(count)
+  {
+    console.log(count);
   }
 }
