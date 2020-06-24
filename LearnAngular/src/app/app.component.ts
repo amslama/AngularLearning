@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   inputVal: string = "";
   collectedData = [];
+
+  ngIfStatus: boolean = true;
+  ngIfStatus2: boolean = false;
   title: string  = "Learn Angular";
   imgSrc150: string = "https://via.placeholder.com/150";
   cs: number = 2;

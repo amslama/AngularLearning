@@ -1,18 +1,23 @@
 {
   "compilerOptions": {
-    "baseUrl": "",
-    "declaration": false,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
-    "mapRoot": "./",
-    "module": "es6",
-    "moduleResolution": "node",
-    "outDir": "../dist/out-tsc",
-    "sourceMap": true,
     "target": "es5",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "lib": ["es6", "es2015", "dom"],
+    "noLib": false,
+    "outDir": "./dist",
     "typeRoots": [
-      "../node_modules/@types"
+      "./node_modules/@types",
+      "./node_modules"
+    ],
+    "types": [
+      "mocha",
+      "chai",
+      "node",
+      "sprintf-js"
     ]
   }
 }

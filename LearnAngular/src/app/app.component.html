@@ -6,7 +6,9 @@
 >
    Another directive, only text color
 </div>
-The data we recieved for the component : {{title}}
+
+
+The data we received for the component : {{title}}
 
 <!--interpolation binding-->
 <img src = "{{imgSrc150}}" alt = "img not displayed">
@@ -66,3 +68,12 @@ The data we recieved for the component : {{title}}
 <ul *ngFor="let data of collectedData">
    {{data}}<br>
 </ul>
+
+<div *ngIf= "ngIfStatus && ngIfStatus2 == true">
+   So, the ngIfStatus variaable is true.
+</div>
+<!--Potentially using the wrong version of angular
+<ng-template #elseBlock>
+   This the else block
+</ng-template>
+-->
